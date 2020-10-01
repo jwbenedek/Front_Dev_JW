@@ -1,3 +1,4 @@
+
 /* CSS Document */
 *, *::after, *::before {
   box-sizing:border-box;  
@@ -11,6 +12,15 @@ body {
     padding:0;
     
 }
+/* HEADER */
+
+header  {
+    position:absolute;
+    top:0;
+    z-index:4;
+    width:100%;
+}
+
 
 
 header nav ul {    
@@ -21,9 +31,17 @@ header nav ul {
    
 }
 
+header nav ul li button {
+    background-color:transparent;
+    border:none;
+}
+
+
 header nav ul li:first-of-type {
     margin-right:auto;
 }
+
+/* NAV BAR */
 
 .logo{
     width:auto;
@@ -32,15 +50,18 @@ header nav ul li:first-of-type {
 }
 
 .search {
-    width:25px;
+    width:27px;
     height:auto;
+    background-color: transparent;
+    border: none;
 }
 
 .shoppingbag{  
-    width: 25px;
+    width: 24px;
     height: auto;
     border: 1px solid rgba(179, 179, 179, 1);
     background:none;
+    background-color:transparent;
 }
 
 .hamburger {
@@ -51,7 +72,11 @@ header nav ul li:first-of-type {
 
 img {
     width: 100%;
+    display:block;
+
 }
+
+/* MAIN PAGE */ 
 
 .parent {
     position:relative;
@@ -60,30 +85,55 @@ img {
 
 .image1 {
     position:relative;
+    z-index:1
 }
 
 .image2 {
     position:absolute;
     left:.4em;
-    width:150%;
+    top:0;
+    z-index:2;
+    width:98%;
+   
     
 }
 
 .parent p {
     position:absolute;
-    bottom: 1;  
+    bottom: 25%; 
+    left: 10%;
+    right: 55%;
+    z-index:3;
+    font-size: 2vw;
+    color: rgb(244, 242, 218);
 
-} // waarom is deze eronder? //
+} /* waarom is deze eronder? */
+
+.repair {
+    position:relative;
+}
+
+.repair p {
+    position:absolute;
+    bottom:10%; 
+    left:5%;
+    right: 60%;
+    font-size: 2vw;
+    z-index:3;
+    
+}
 
 .image3 {
     position:relative;
+    z-index:1;
 }
 
 .image4 {
     position:absolute;
     left: 0;
-}
-
+    top:0;  
+    z-index:2;
+}  
 
 
 .newarrival {
@@ -97,25 +147,20 @@ img {
 .image6 {
     position: absolute;
     left:0;
+    top:0em;
+    width:80%;
+    align-items:center;
+    
 }
 
 .newarrival p {
       position:absolute;
     bottom: 0;
-    font-size: 1;
-    text-align:center;    // waarom werkt dit niet? //
+    font-size: 1em;
+    text-align:center;  
 }
 
-.repair {
-    position:relative;
-}
 
-.repair p {
-    position:absolute;
-    bottom: 1;
-    font-size: 1;
-    
-}
 
 footer {
     background:rgba(38, 38, 38, 1);
@@ -126,14 +171,7 @@ footer p {
     color: rgba(179, 179, 179, 1);
 }
 
-article {
-    flex-grow:1;
-    flex-wrap:wrap;
-}
 
-footer ul {
-    list-style: none;
-}
 
 .store {
     width:auto;
@@ -149,31 +187,19 @@ footer ul {
     margin:1em;
 }
 
-.menu2 {
-    display:flex;
-    flex-grow:50%;
-}
 
 .storelocator {
     display:flex;
-    padding:3em 0em 0em 1.5em;
+    padding:1em 0em 0em 1em;
     align-items: center;
 
 }
 
 .newsletter {
     display:flex;
-    padding:1em 0em 0em 1.5em;
+    padding:1em 0em 0em 1em;
     align-items:center;
 
-}
-
-.storebutton {
-    border:1px solid white;
-    margin:0; padding:.5em 1em;
-    border-radius:.25em;
-    text-decoration: none;
-    color: white;
 }
 
 .storelocator p {
@@ -184,10 +210,156 @@ footer ul {
     color:white;
 }
 
-.newsbutton {
+
+.storebutton {
     border:1px solid white;
-    margin:0; padding:.5em 1em;
+    margin:0em 0em 0em 2em; padding:.75em 1em;
     border-radius:.25em;
     text-decoration: none;
     color: white;
+    background-color:transparent;
+}
+
+.newsbutton {
+    border:1px solid white;
+    margin:0em 0em 0em 2em; padding:.75em 1em;
+    border-radius:.25em;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+}
+
+
+
+footer .menu2 {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); /* store news knop div maken en grid minmax */
+    margin: 0em 0em 0em 2em;
+    padding:0;
+}
+
+footer ul {
+    list-style: none;
+margin:0; padding:0;
+}
+
+.sticky {
+    top:0;
+    position:fixed;
+}
+
+/* HAMBURGER MENU BUTTON Bron: https://www.youtube.com/watch?v=F-mvXKKoSCU */
+
+.uitklap {
+    position:absolute;
+    top:2em;
+    padding: 0em 0em 0em 2em;
+    margin:1em;
+    z-index: 10;
+    overflow:hidden;
+    display:none;
+    color: black;
+    background-color: white;
+    border: solid 2vw transparent;
+    width:100%;
+    height:50%; 
+    
+    /* als grid plaatst, breekt hele hamburgermenu, why? */
+  
+}
+
+.uitklapmenu {
+    height:100%;
+    width:100%;
+}
+.shop {
+    font-size: 1.5em;
+    padding:0;
+    margin:.5em 0em 0em 0em;
+}
+
+#menu{
+	width: 25px;
+	height: 10px;
+	margin: 15px 10px 10px 10px;
+	cursor: pointer;
+}
+.bar{
+	height: 2px;
+	width: 100%;
+	background-color: white;
+	display: block;
+	border-radius: 5px;
+	transition: 0.3s ease;
+}
+#bar1{
+	transform: translateY(-4px);
+}
+#bar3{
+	transform: translateY(4px);
+}
+
+}
+.menu-bg, #menu-bar{
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+.menu-bg{
+	z-index: 1;
+	width: 0;
+	height: 0;
+	margin: 30px 0 20px 20px;
+	background: radial-gradient(circle,#e94498,#b81568);
+	border-radius: 50%;
+	transition: 0.3s ease;
+}
+#menu-bar{
+	z-index: 2;	
+}
+.change-bg{
+	width: 550px;
+	height: 540px;
+	transform: translate(-60%,-30%);
+}
+.change .bar{
+	background-color: white;
+}
+.change #bar1{
+	transform: translateY(1px) rotateZ(-45deg);
+}
+.change #bar3{
+	transform: translateY(-3px) rotate(45deg);
+}
+.change #bar2{
+	opacity: 0;
+}
+
+.change {
+    display:block;
+}
+
+
+
+
+
+
+
+/* MEDIAQUARY */
+
+@media (min-width:768px) {
+    
+    footer .footergrid { 
+        display:grid; 
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    footer .menu2  {
+        display: grid;
+        grid-column:span 3;
+        
+    }
+    
+  
+    
 }
