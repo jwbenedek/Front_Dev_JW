@@ -1,8 +1,12 @@
 
 /* CSS Document */
 *, *::after, *::before {
-  box-sizing:border-box;  
+    box-sizing:border-box;  
 }
+
+
+ /* ALGEMEEN */
+
 
 body {
     background-color: white;
@@ -10,9 +14,15 @@ body {
     color: white;
     margin:0;
     padding:0;
+    font-family:verdana;
     
 }
+
+
+
 /* HEADER */
+
+
 
 header  {
     position:absolute;
@@ -21,14 +31,11 @@ header  {
     width:100%;
 }
 
-
-
 header nav ul {    
-  margin:0; padding:0;
-  display:flex;
+    margin:; padding:0;
+    display:flex;
     list-style:none;
-    align-items:center;
-   
+    align-items:center;  
 }
 
 header nav ul li button {
@@ -41,11 +48,16 @@ header nav ul li:first-of-type {
     margin-right:auto;
 }
 
+
+
 /* NAV BAR */
+
+
 
 .logo{
     width:auto;
-    height: 35px;
+    height: 30px;
+    margin: 0em 0em 0em 1em;
 
 }
 
@@ -57,9 +69,8 @@ header nav ul li:first-of-type {
 }
 
 .shoppingbag{  
-    width: 24px;
+    width: 20px;
     height: auto;
-    border: 1px solid rgba(179, 179, 179, 1);
     background:none;
     background-color:transparent;
 }
@@ -76,7 +87,112 @@ img {
 
 }
 
-/* MAIN PAGE */ 
+.uitklap {
+    position:absolute;
+    top:2em;
+     padding: 1em;
+    margin:1em;
+    z-index: 10;
+    overflow:hidden;
+    display:grid;
+    color: black;
+    background-color: white;
+    border: solid 2vw transparent; 
+    opacity:0;
+    transition: all  1s;
+    width:96%;
+    height:20%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 100px 100px;
+}
+
+.nav1 {
+    grid-row-start: 2;
+}
+
+.uitklapmenu ul li  {
+    list-style:none;
+}
+
+.uitklapmenu ul li a {
+    list-style:none;
+    text-decoration: none;
+    color:black;
+    line-height: 25px;
+}
+
+.shop {
+    font-size: 1.5em;
+    padding:0;
+    margin:.5em 0em 0em 0em;
+}
+
+#menu{
+	width: 25px;
+	height: 10px;
+	margin: 15px 10px 10px 10px;
+	cursor: pointer;
+}
+
+.bar{
+	height: 2px;
+	width: 100%;
+	background-color: black;
+	display: block;
+	border-radius: 5px;
+	transition: 0.3s ease;
+}
+
+#bar1{
+	transform: translateY(-4px);
+}
+
+#bar3{
+	transform: translateY(4px);
+}
+
+.menu-bg{
+	z-index: 1;
+	width: 0;
+	height: 0;
+	margin: 30px 0 20px 20px;
+	background: radial-gradient(circle,#e94498,#b81568);
+	border-radius: 50%;
+	transition: 0.3s ease;
+}
+
+#menu-bar{
+	z-index: 2;	
+}
+
+.change-bg{
+	width: 550px;
+	height: 540px;
+	transform: translate(-60%,-30%);
+}
+
+.change .bar{
+	background-color: black;
+}
+
+.change #bar1{
+	transform: translateY(1px) rotateZ(-45deg);
+}
+
+.change #bar3{
+	transform: translateY(-3px) rotate(45deg);
+}
+
+.change #bar2{
+	opacity: 0;
+}
+
+.change {
+    opacity:1;
+}
+
+
+/* EERSTE AFBEELDING */ 
 
 .parent {
     position:relative;
@@ -98,31 +214,58 @@ img {
     
 }
 
-.parent p {
+.parent p:first-of-type {
     position:absolute;
-    bottom: 25%; 
+    bottom: 31%; 
     left: 10%;
     right: 55%;
     z-index:3;
-    font-size: 2vw;
+    font-size: 1.6vw;
     color: rgb(244, 242, 218);
+} 
 
-} /* waarom is deze eronder? */
+.parent p:nth-of-type(2) {
+     position:absolute;
+    bottom: 30%; 
+    left: 10%;
+    right: 55%;
+    z-index:3;
+    font-size: 1.6vw;
+    color: rgb(244, 242, 218);
+}
+
+.parent p:nth-of-type(3) {
+     position:absolute;
+    bottom: 28%; 
+    left: 10%;
+    right: 55%;
+    z-index:3;
+    font-size: 1.6vw;
+    color: rgb(244, 242, 218);
+}
+/* waarom is deze eronder? */
 
 .repair {
     position:relative;
 }
 
-.repair p {
+.repair a {
     position:absolute;
-    bottom:10%; 
-    left:5%;
-    right: 60%;
-    font-size: 2vw;
+    bottom:20%; 
+    left:25%;
+    right: 25%;
+    font-size: 1.6vw;
     z-index:3;
+    text-align: center;
+    color: rgb(244, 242, 218);
     
 }
 
+.repair a:nth-of-type(2) {
+    bottom:15%;
+    text-decoration:underline;
+    color: rgb(244, 242, 218);
+}
 .image3 {
     position:relative;
     z-index:1;
@@ -149,26 +292,41 @@ img {
     left:0;
     top:0em;
     width:80%;
-    align-items:center;
-    
+    align-items:center;   
 }
 
-.newarrival p {
+.newarrival a {
       position:absolute;
-    bottom: 0;
-    font-size: 1em;
-    text-align:center;  
+    bottom: 15%;
+    font-size: 1.8vw;
+    text-align:center;
+    width:100%;
+}
+
+.newarrival a:nth-of-type(2) {
+    position:absolute;
+    bottom:10%;
+    text-decoration:underline;
+    font-size:2vw;
+    color:white;
+    
 }
 
 
 
 footer {
     background:rgba(38, 38, 38, 1);
+    font-family:verdana;
 
 }
 
+footer li {
+    padding:.1em;
+    font-size:80%;
+}
 footer p {
     color: rgba(179, 179, 179, 1);
+    font-size:80%;
 }
 
 
@@ -236,7 +394,10 @@ footer .menu2 {
     grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); /* store news knop div maken en grid minmax */
     margin: 0em 0em 0em 2em;
     padding:0;
+    
 }
+
+
 
 footer ul {
     list-style: none;
@@ -248,96 +409,12 @@ margin:0; padding:0;
     position:fixed;
 }
 
+.social  {
+    margin: 2em;
+}
+
 /* HAMBURGER MENU BUTTON Bron: https://www.youtube.com/watch?v=F-mvXKKoSCU */
 
-.uitklap {
-    position:absolute;
-    top:2em;
-    padding: 0em 0em 0em 2em;
-    margin:1em;
-    z-index: 10;
-    overflow:hidden;
-    display:none;
-    color: black;
-    background-color: white;
-    border: solid 2vw transparent;
-    width:100%;
-    height:50%; 
-    
-    /* als grid plaatst, breekt hele hamburgermenu, why? */
-  
-}
-
-.uitklapmenu {
-    height:100%;
-    width:100%;
-}
-.shop {
-    font-size: 1.5em;
-    padding:0;
-    margin:.5em 0em 0em 0em;
-}
-
-#menu{
-	width: 25px;
-	height: 10px;
-	margin: 15px 10px 10px 10px;
-	cursor: pointer;
-}
-.bar{
-	height: 2px;
-	width: 100%;
-	background-color: white;
-	display: block;
-	border-radius: 5px;
-	transition: 0.3s ease;
-}
-#bar1{
-	transform: translateY(-4px);
-}
-#bar3{
-	transform: translateY(4px);
-}
-
-}
-.menu-bg, #menu-bar{
-	top: 0;
-	left: 0;
-	position: absolute;
-}
-.menu-bg{
-	z-index: 1;
-	width: 0;
-	height: 0;
-	margin: 30px 0 20px 20px;
-	background: radial-gradient(circle,#e94498,#b81568);
-	border-radius: 50%;
-	transition: 0.3s ease;
-}
-#menu-bar{
-	z-index: 2;	
-}
-.change-bg{
-	width: 550px;
-	height: 540px;
-	transform: translate(-60%,-30%);
-}
-.change .bar{
-	background-color: white;
-}
-.change #bar1{
-	transform: translateY(1px) rotateZ(-45deg);
-}
-.change #bar3{
-	transform: translateY(-3px) rotate(45deg);
-}
-.change #bar2{
-	opacity: 0;
-}
-
-.change {
-    display:block;
-}
 
 
 
